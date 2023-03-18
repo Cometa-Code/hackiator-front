@@ -9,6 +9,11 @@ export default {
             }
         }
     },
+    created() {
+        setTimeout(() => {
+            this.loader = false;
+        }, 5000);
+    },
     methods: {
         formatSlugWithStopping: function formatSlugWithStopping() {
             clearTimeout(formatSlugWithStopping.timeout);
@@ -28,14 +33,34 @@ export default {
                 <img src="@/assets/logo.png" alt="">
             </figure>
 
-            <section id="hacked-loader">
+            <section id="hacked-loader" v-if="loader">
                 <section class="border-loader"></section>
 
                 <figure id="figure-hacked-loader">
                     <img src="@/assets/hacked.gif" alt="">
                 </figure>
 
-                <p>Aguarde...</p>
+                <p>Hackeando...</p>
+            </section>
+            
+
+            <section id="hacked-result" v-if="!loader">
+                <section class="border-result"></section>
+
+                <article id="result">
+                    <p id="result-text">Entrar após:</p>
+                    <p id="result-number">1.58</p>
+                </article>
+            </section>
+
+            <section id="exit-into" v-if="!loader">
+                <figure>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                    </svg>
+                </figure>
+
+                <p id="result-text">Sair em: <span style="color: white;">2.0x</span></p>
             </section>
 
             <footer id="footer-results">
@@ -81,6 +106,64 @@ export default {
 #logo-bet img {
     width: 250px;
     max-width: 100%;
+}
+
+#hacked-result {
+    height: 300px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Rubik Glitch';
+    font-size: 30px;
+    color: #DB083D;
+    letter-spacing: 1px;
+    border-radius: 100%;
+    margin-top: 100px;
+    animation-name: border-loader;
+    animation-duration: 1.6s;
+    animation-iteration-count: infinite;
+}
+
+#result #result-number {
+    color: white;
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-size: 60px;
+}
+
+#result #result-text {
+    color: white;
+    font-weight: 500;
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: bold;
+    color: #e2184a;
+}
+
+#exit-into {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e2184a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 200px;
+}
+
+#exit-into figure {
+    width: 25px;
+    margin-right: 10px;
+}
+
+.border-result {
+    width: 250px;
+    height: 250px;
+    border: 3px solid #DB083D;
+    border-radius: 100%;
+    position: absolute;
 }
 
 #hacked-loader {
@@ -249,6 +332,10 @@ export default {
     
     #hacked-loader {
         margin-top: 10px;
+    }
+
+    #hacked-result {
+        margin-top: 0px;
     }
 }
 </style>

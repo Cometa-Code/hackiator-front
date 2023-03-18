@@ -25,5 +25,6 @@ textarea:focus, input:focus, select:focus {
 } 
 
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 </style>
