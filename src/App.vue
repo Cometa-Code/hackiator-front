@@ -23,4 +23,7 @@ textarea:focus, input:focus, select:focus {
     border: 0 none;
     outline: 0;
 } 
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
+
 </style>

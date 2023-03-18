@@ -3,6 +3,7 @@ import LoginView from '../views/LoginView.vue'
 import SelectGameLowCandleView from '../views/SelectGameLowCandleView.vue'
 import SelectGameTallCandleView from '../views/SelectGameTallCandleView.vue'
 import SelectLevelView from '../views/SelectLevelView.vue'
+import EsportesDaSorteView from '../views/bets/EsportesDaSorteView.vue'
 
 const routes = [
   {
@@ -13,7 +14,12 @@ const routes = [
   {
     path: '/velas-baixas',
     name: 'selectGameLowCandle',
-    component: SelectGameLowCandleView
+    component: SelectGameLowCandleView,
+  },
+  {
+    path: '/velas-baixas/esportesdasorte',
+    name: 'esportesdasorte',
+    component: EsportesDaSorteView
   },
   {
     path: '/velas-altas',
